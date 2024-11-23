@@ -1,0 +1,13 @@
+---
+- name: output
+  hosts: all
+  become: true
+
+  vars_files:
+  - varis.yml
+
+  tasks:
+  - name: creating user
+    ansible.builtin.user:
+      name: "{{user1}}"
+      state: present

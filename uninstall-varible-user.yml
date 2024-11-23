@@ -1,0 +1,18 @@
+---
+- name: dlt user {{user1}} {{user2}}
+  hosts: all
+  become: true
+
+  vars_files:
+  - varis.yml
+
+  tasks:
+  - name: dlt {{user1}}
+    user:
+      name: "{{user1}}"
+      state: absent
+
+  - name: dlt {{user2}}
+    user:
+      name: "{{user2}}"
+      state: absent  

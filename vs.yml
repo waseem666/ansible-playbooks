@@ -1,0 +1,14 @@
+---
+- name: display user {{himmat}}
+  hosts: all
+  become: true
+
+  vars_files:
+  - varis.yml
+
+  tasks:
+  - name: display {{user1}}
+    user:
+      name: "{{user2}}"
+      state: present
+

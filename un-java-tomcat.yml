@@ -1,0 +1,15 @@
+---
+- name: uninstall java
+  hosts: all
+  become: yes
+  tasks: 
+  - name: java uninstall
+    yum:
+      name: java*
+      state: absent
+  
+  - name: uninstall tomcat 
+    yum:
+      name: tomcat*
+      state: absent
+ 

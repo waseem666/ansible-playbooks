@@ -1,0 +1,13 @@
+---
+- name: out
+  hosts: all
+  become: true
+
+  vars:
+    user1: sunny
+
+  tasks:
+    - name: display
+      ansible.builtin.user:
+        name: "{{ user1 }}"
+

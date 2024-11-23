@@ -1,0 +1,21 @@
+---
+- name: hello
+  hosts: all
+  become: true
+  tasks:
+  - name: httpd
+    yum:
+     name: httpd
+     state: present
+
+  - name: service start
+    service: 
+      name: httpd
+      state: started
+     
+  - copy:
+      src: /home/ansadmin/index.html
+      dest: /var/www/html
+      mode: 0777
+      owner: ansadmin
+
